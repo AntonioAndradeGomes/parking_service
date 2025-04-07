@@ -1,0 +1,11 @@
+<svg width="300" height="300" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo verde escuro (círculo externo) -->
+  <circle cx="100" cy="100" r="100" fill="#1B5E20"/>
+
+  <!-- Faixa verde clara (anel fino próximo à borda) -->
+  <circle cx="100" cy="100" r="90" fill="#A5D6A7"/>
+  <circle cx="100" cy="100" r="85" fill="#1B5E20"/>
+
+  <!-- Letra P branca, centralizada e maior -->
+  <text x="100" y="100" font-size="110" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold" dominant-baseline="central">P</text>
+</svg>
