@@ -5,11 +5,11 @@ class Customer(models.Model):
     #os clientes no futuro vão usar isso num app
     user = models.OneToOneField( #ligação 1-1 para o usuário do Django
         User,
-        on_delete=models.PROTECT, #se eu criar um cliente que está ligado a um user do Django, não vai deixar
+        on_delete=models.PROTECT, 
         blank=True, 
         null=True, 
-        related_name='customer',
-        verbose_name='Cliente'
+        related_name='user',
+        verbose_name='Usuário'  
     )
     name = models.CharField(
         max_length=100, 

@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'rest_framework_simplejwt',
+
+    'authentication',
     'customers',
     'vehicles',
     'parking',
@@ -275,4 +278,21 @@ JAZZMIN_SETTINGS = {
     #"changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs"},
     # Add a language dropdown into the admin
     #"language_chooser": True,
+}
+
+REST_FRAMEWORK = {
+    # classe de autenticação padrão
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # todos os endpoints da API serão protegidos por JWT
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+
+    #'DEFAULT_PERMISSION_CLASSES': [
+    #    'rest_framework.permissions.IsAuthenticated',
+    #]
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),  
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
